@@ -1,3 +1,7 @@
 __pycache__
 backend/.idea
 venv
+*.xml
+.idea/
+*.sqlite3
+*.jpg
