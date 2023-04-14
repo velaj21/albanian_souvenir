@@ -17,7 +17,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=25)
-    price = models.FloatField([MinValueValidator(0.0)])
+    price = models.FloatField(validators=[MinValueValidator(0.0)])
     quantity = models.PositiveSmallIntegerField(default=0)
     description = models.TextField()
     image = models.ImageField(validators=[FileExtensionValidator(['jpg', 'jpeg', 'png'])])
