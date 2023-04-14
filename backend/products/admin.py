@@ -20,4 +20,6 @@ class ProductAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     search_fields = ('name__istartswith',)
     list_filter = ('name',)
+    list_display = ('id', 'name',)
+    list_editable = ('name',)
     list_per_page = 80
