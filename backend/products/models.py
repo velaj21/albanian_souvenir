@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.validators import FileExtensionValidator
+from django.core.validators import FileExtensionValidator, MinValueValidator
 from django.utils.html import mark_safe
 
 
@@ -12,11 +12,12 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = "Categories"
+        ordering = ['-name']
 
 
 class Product(models.Model):
     name = models.CharField(max_length=25)
-    price = models.FloatField()
+    price = models.FloatField([MinValueValidator(0.0)])
     quantity = models.PositiveSmallIntegerField(default=0)
     description = models.TextField()
     image = models.ImageField(validators=[FileExtensionValidator(['jpg', 'jpeg', 'png'])])
