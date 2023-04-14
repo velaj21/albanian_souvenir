@@ -8,10 +8,10 @@ from . import models
 @admin.register(models.Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'category', 'price', 'image_tag')
-    list_select_related = ('category', 'shop')
+    list_select_related = ('category',)
     readonly_fields = ('image_tag',)
     search_fields = ('name__istartswith', 'description__in')
-    autocomplete_fields = ('category', 'shop')
+    autocomplete_fields = ('category',)
     list_filter = ('category',)
     list_per_page = 80
 
