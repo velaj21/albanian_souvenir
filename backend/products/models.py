@@ -11,7 +11,7 @@ class Category(models.Model):
         return f'{self.name}'
 
     class Meta:
-        verbose_name_plural = "Categories"
+        verbose_name_plural = 'Categories'
         ordering = ['-name']
 
 
@@ -24,10 +24,10 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
 
     def image_tag(self):
-        return mark_safe('<img src="{}" width="150" height="150"/>'.format(self.image.url))
+        return mark_safe('<img src=\'{}\' width=\'150\' height=\'150\'/>'.format(self.image.url))
 
     image_tag.short_description = 'Product Image'
     image_tag.allow_tags = True
 
     def __str__(self):
-        return f"{self.name} / {self.category}"
+        return f'{self.name} / {self.category}'
