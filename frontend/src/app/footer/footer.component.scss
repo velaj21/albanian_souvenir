@@ -1,0 +1,114 @@
+//button {
+//  border: 0;
+//}
+//
+//ul {
+//  list-style: none;
+//}
+//
+//svg {
+//  width: 2rem;
+//  height: 2rem;
+//  margin-right: 1rem;
+//
+//  &.bi-instagram, &.bi-facebook, &.bi-youtube, &.bi-linkedin {
+//    fill: currentColor;
+//
+//    &.bi-instagram {
+//      color: magenta;
+//    }
+//
+//    &.bi-linkedin {
+//      color: #0c59ef;
+//    }
+//
+//    &.bi-youtube {
+//      color: red;
+//    }
+//
+//    &.bi-facebook {
+//      color: #0c59ef;
+//    }
+//  }
+//}
+//
+//.links {
+//  position: relative;
+//}
+//
+//footer {
+//  background-color: #111120;
+//  bottom: 0;
+//  color: white;
+//  position: absolute;
+//  width: 100%;
+//  font-family: "Roboto", sans-serif;
+//}
+//
+//li {
+//  display: flex;
+//  align-items: center;
+//}
+//
+//a {
+//  margin-bottom: 2rem;
+//}
+
+/* Use variables for commonly used values */
+$primary-color: #0c59ef;
+$secondary-color: magenta;
+$bg-color: #111120;
+
+button {
+  border: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+svg {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+
+  &.bi-instagram, &.bi-facebook, &.bi-youtube, &.bi-linkedin {
+    fill: currentColor;
+
+    &.bi-instagram {
+      color: $secondary-color;
+    }
+
+    &.bi-linkedin {
+      color: $primary-color;
+    }
+
+    &.bi-youtube {
+      color: red;
+    }
+
+    &.bi-facebook {
+      color: $primary-color;
+    }
+  }
+}
+
+.links {
+  position: relative;
+}
+
+footer {
+  background-color: $bg-color;
+  bottom: 0;
+  color: white;
+  position: absolute;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  padding: 2rem;
+
+  /* Use flexbox for better alignment */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
