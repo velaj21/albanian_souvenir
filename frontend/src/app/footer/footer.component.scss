@@ -1,0 +1,82 @@
+/* Define variables for commonly used values */
+$primary-color: #0c59ef;
+$accent-color: magenta;
+$bg-color: #111120;
+
+ul {
+  list-style: none;
+}
+
+/* Style links in list items */
+li {
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.5;
+      color: #32ccbf;
+    }
+  }
+}
+
+/* Style social media icons */
+svg {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  fill: currentColor; /* Use currentColor to inherit color from parent */
+
+  &.bi-instagram, &.bi-facebook, &.bi-youtube, &.bi-twitter {
+    fill: currentColor;
+
+    &.bi-instagram {
+      color: $accent-color;
+    }
+
+    &.bi-twitter {
+      color: $primary-color;
+    }
+
+    &.bi-youtube {
+      color: red;
+    }
+
+    &.bi-facebook {
+      color: $primary-color;
+    }
+  }
+}
+
+/* Style footer */
+footer {
+  background-color: $bg-color;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  /* Adjust styles for screens smaller than 768px */
+  @media (max-width: 767px) {
+    text-align: center;
+    padding: 2rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  /* Adjust styles for screens larger than 768px */
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+}

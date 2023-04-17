@@ -1,12 +1,11 @@
 from django.contrib import admin
 from . import models
 from . import inlines
-from django.db.models import Count
+from django.db.models import Count, CharField, Value
+from django.db.models.functions import Concat
 
 
 # Register your models here.
-
-
 @admin.register(models.Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'category', 'price', 'image_tag')
@@ -36,10 +35,15 @@ class OrderAdmin(admin.ModelAdmin):
     inlines = [inlines.ProductOrderedProduct]
     readonly_fields = ('create_date', 'counted_products')
 
+    @admin.display(empty_value='')
     def counted_products(self, request):
-        counted_products = request.orderedproduct_set.all().filter(order__id=request.pk) \
-            .values('product__name').annotate(count=Count('id')).values('product__name', 'count')
-        return '\n'.join(('{} - {}'.format(item['count'], item['product__name'])) for item in counted_products)
+        # ordered_products = request.orderedproduct_set.all().filter(order__id=request.pk) \
+        #     .values('product__name').annotate(name=Count('id', output_field=CharField()) + ' - ' + 'product__name') \
+        #     .values('name')
+        ordered_products = request.orderedproduct_set.select_related('product').all().filter(order=request.pk) \
+            .values('product__name').annotate(name=Concat(Count('id', output_field=CharField()), Value(' - '),
+                                                          'product__name', output_field=CharField())).values('name')
+        return '\n'.join(('{}'.format(item['name'])) for item in ordered_products)
 
 
 @admin.register(models.OrderedProduct)
