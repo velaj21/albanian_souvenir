@@ -1,14 +1,14 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-               [mode]="(isHandset$ | async) ? 'over' : 'side'"
-               [opened]="(isHandset$ | async) === false">
+               [mode]="(isHandset$ | async) ? 'side' : 'side'"
+               [opened]="(isHandset$ | async) === true">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-form-field appearance="fill">
       <mat-label>Products</mat-label>
       <mat-select #mode value="side">
-        <mat-option value="side">Side</mat-option>
-        <mat-option value="over">Over</mat-option>
+        <mat-option value="side"><a>Side</a></mat-option>
+        <mat-option value="over">ASD</mat-option>
         <mat-option value="push">Push</mat-option>
       </mat-select>
     </mat-form-field>
@@ -24,10 +24,12 @@
         mat-icon-button
         (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        <mat-icon aria-label=" Side nav toggle icon">menu</mat-icon>
       </button>
       <img src="https://souveniralbania.com/wp-content/uploads/2020/04/cropped-cropped-output-onlinepngtools-300x85.png"
            alt="..."/>
+      <div *ngIf="(isHandset$ | async) === false">
+      </div>
     </mat-toolbar>
     <app-footer></app-footer>
   </mat-sidenav-content>
