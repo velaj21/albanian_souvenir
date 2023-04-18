@@ -53,30 +53,8 @@ footer {
   background-color: $bg-color;
   color: white;
   font-family: "Roboto", sans-serif;
-  position: fixed;
+  position: inherit;
   left: 0;
-  bottom: 0;
+  top: 100%;
   width: 100%;
-
-  /* Adjust styles for screens smaller than 768px */
-  @media (max-width: 767px) {
-    text-align: center;
-    padding: 2rem;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-  }
-
-  /* Adjust styles for screens larger than 768px */
-  @media (min-width: 768px) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 4rem;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-  }
 }

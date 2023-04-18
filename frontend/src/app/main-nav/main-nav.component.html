@@ -1,36 +1,93 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-               [mode]="(isHandset$ | async) ? 'side' : 'side'"
-               [opened]="(isHandset$ | async) === true">
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-form-field appearance="fill">
-      <mat-label>Products</mat-label>
-      <mat-select #mode value="side">
-        <mat-option value="side"><a>Side</a></mat-option>
-        <mat-option value="over">ASD</mat-option>
-        <mat-option value="push">Push</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="secondary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label=" Side nav toggle icon">menu</mat-icon>
-      </button>
-      <img src="https://souveniralbania.com/wp-content/uploads/2020/04/cropped-cropped-output-onlinepngtools-300x85.png"
-           alt="..."/>
-      <div *ngIf="(isHandset$ | async) === false">
-      </div>
-    </mat-toolbar>
-    <app-footer></app-footer>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<!--<mat-sidenav-container class="sidenav-container">-->
+<!--  <mat-sidenav #drawer class="sidenav" fixedInViewport-->
+<!--               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"-->
+<!--               [mode]="(isHandset$ | async) ? 'side' : 'side'"-->
+<!--               [opened]="(isHandset$ | async) === true">-->
+<!--    <mat-toolbar>Menu</mat-toolbar>-->
+<!--    <mat-form-field appearance="fill">-->
+<!--      <mat-label>Products</mat-label>-->
+<!--      <mat-select #mode value="side">-->
+<!--        <mat-option value="side"><a>Side</a></mat-option>-->
+<!--        <mat-option value="over">ASD</mat-option>-->
+<!--        <mat-option value="push">Push</mat-option>-->
+<!--      </mat-select>-->
+<!--    </mat-form-field>-->
+<!--    <mat-nav-list>-->
+<!--      <a mat-list-item href="#">Link 1</a>-->
+<!--    </mat-nav-list>-->
+<!--  </mat-sidenav>-->
+<!--  <mat-sidenav-content>-->
+<!--    <mat-toolbar color="secondary">-->
+<!--      <button-->
+<!--        type="button"-->
+<!--        aria-label="Toggle sidenav"-->
+<!--        mat-icon-button-->
+<!--        (click)="drawer.toggle()"-->
+<!--        *ngIf="isHandset$ | async">-->
+<!--        <mat-icon aria-label=" Side nav toggle icon">menu</mat-icon>-->
+<!--      </button>-->
+<!--      <img src="https://souveniralbania.com/wp-content/uploads/2020/04/cropped-cropped-output-onlinepngtools-300x85.png"-->
+<!--           alt="..."/>-->
+<!--      <div *ngIf="(isHandset$ | async) === false">-->
+<!--      </div>-->
+<!--      <div class="sad">-->
+<!--        <a mat-tab-nav-bar href="#">Link 1</a>-->
+<!--      </div>-->
+<!--      <div class="sad">-->
+<!--        <a mat-tab-nav-bar href="#">Link 1</a>-->
+<!--      </div>-->
+<!--      <div class="sad">-->
+<!--        <a mat-tab-nav-bar href="#">Link 1</a>-->
+<!--      </div>-->
+<!--    </mat-toolbar>-->
+<!--    <ng-content></ng-content>-->
+<!--  </mat-sidenav-content>-->
+<!--</mat-sidenav-container>-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <div class="container-fluid">
+    <img src="https://souveniralbania.com/wp-content/uploads/2020/04/cropped-cropped-output-onlinepngtools-300x85.png"
+         alt="..." height="50">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false">
+            Products
+          </a>
+          <!--          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">-->
+          <!--            <li><a class="dropdown-item" href="#">Action</a></li>-->
+          <!--            <li><a class="dropdown-item" href="#">Another action</a></li>-->
+          <!--&lt;!&ndash;            <li>&ndash;&gt;-->
+          <!--&lt;!&ndash;              <hr class="dropdown-divider">&ndash;&gt;-->
+          <!--&lt;!&ndash;            </li>&ndash;&gt;-->
+          <!--            <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+          <!--          </ul>-->
+          <div id="drop" class="dropdown-menu dropdown-menu-end">
+            <a class="dropdown-item" href="#">Link 1</a>
+            <a class="dropdown-item" href="#">Link 2</a>
+            <a class="dropdown-item" href="#">Link 3</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div>
+  </div>
+</nav>
+<div class="box">
+  <app-about-us class="bg-danger"></app-about-us>
+</div>

@@ -1,26 +1,19 @@
-.sidenav-container {
-  height: 100%;
-}
-
-.sidenav {
-  width: 200px;
-  background: white;
-}
-
-.mat-toolbar {
-  background: #433349;
-}
-
-.sidenav .mat-toolbar {
-  background: inherit;
-}
-
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
 img {
   width: 10rem;
+}
+
+//ul {
+//  margin-left: 10rem;
+//}
+
+#drop {
+  background: #130909;
+}
+
+#drop a {
+  color: white;
+}
+
+#drop a:hover {
+  color: black;
 }
