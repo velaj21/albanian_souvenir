@@ -16,13 +16,15 @@ import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {MatTabsModule} from "@angular/material/tabs";
 import { AboutUsComponent } from './about-us/about-us.component';
+import { BackgroundComponent } from './background/background.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
     FooterComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    BackgroundComponent
   ],
     imports: [
         BrowserModule,
